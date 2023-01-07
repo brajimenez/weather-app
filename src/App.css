@@ -1,0 +1,196 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/public/images/imagen11.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  transition: background-image 500ms ease;
+}
+
+.card {
+  width: 100%;
+  max-width: 450px;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 30px 15px;
+  border-radius: 12px;
+  display: grid;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  grid-template-columns: repeat(2, 1fr);
+  color: rgb(211, 230, 231);
+}
+.card_header,
+.card__footer,
+.card__temp {
+  grid-column: span 2;
+}
+.card__title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.card__name-Country {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.card__temp {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.card__footer {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.card__info {
+  padding-top: 20px;
+}
+.card__description {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  color: lightcyan;
+}
+.weather__container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card__item {
+  font-size: 1rem;
+}
+.card__btn {
+  padding: 8px 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: darkcyan;
+  color: white;
+  box-shadow: 0 0 10px rgba(1, 33, 48, 0.877);
+  transition: transform 200ms ease;
+}
+.card__text {
+  font-weight: 600;
+  color: lightcyan;
+}
+.card__icon {
+  font-size: 20px;
+}
+
+.card__btn:hover {
+  transform: scale(1.05);
+}
+.card__btn:active {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 5px rgba(1, 42, 177, 0.7);
+}
+.form {
+  position: relative;
+  margin-top: 25px;
+}
+.form__input {
+  padding: 15px 35px 15px 15px;
+  font-size: 1rem;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+.form__input {
+  background-color: white;
+  border: 3px solid rgb(214, 247, 247);
+  color: black;
+}
+.form__input::placeholder {
+  color: lightgray;
+}
+.input-icon {
+  font-size: 20px;
+  color: darkcyan;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: unset;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.loader {
+  margin-top: 50px;
+  width: 48px;
+  height: 48px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: black;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* medias */
+@media (max-width: 525px) {
+  .map {
+    height: 300px;
+  }
+  .map__iframe {
+    width: 300px;
+  }
+  .card {
+    margin: 0 15px;
+  }
+  .card__title {
+    font-size: 35px;
+  }
+  .card__name-Country {
+    font-size: 19px;
+  }
+  .card__description {
+    font-size: 15px;
+  }
+  .card__icon,
+  .card__text,
+  .card__span {
+    font-size: 13px;
+  }
+  .card__temp {
+    margin-top: 10px;
+  }
+}
