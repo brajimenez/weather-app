@@ -27,10 +27,11 @@ function App() {
         .get(URL)
         .then((res) => {
           setWeather(res.data);
-          setBackgroundImage(res.data.weather[0].icon);
+
           const celsius = (res.data.main.temp - 273.15).toFixed(1);
           const farenheit = (celsius * (9 / 5) + 32).toFixed(1);
           setDegrees({ celsius, farenheit });
+          console.log(celsius);
         })
         .catch((err) => console.log(err));
     }
